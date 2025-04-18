@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website showcasing my skills, projects, education, and professional experience.
 
-![Portfolio Screenshot](./assets/images/hero.png)
+![Portfolio Screenshot](./assets/images/profile.png)
 
 ## 🚀 Features
 
