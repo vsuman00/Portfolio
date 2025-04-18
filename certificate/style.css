@@ -1,0 +1,398 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--background);
+  font-family: "Poppins", sans-serif;
+}
+
+*::selection {
+  background: var(--heading-span);
+  color: #fff;
+}
+
+html::-webkit-scrollbar {
+  width: 0.8rem;
+}
+html::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+html::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+}
+
+/* navbar starts */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.7rem 10%;
+  height: 6.5rem;
+  background-color: var(--navbar-bg);
+  box-shadow: 0 1px 4px var(--navbar-shadow);
+}
+section {
+  min-height: 100vh;
+  padding: 2rem 9%;
+}
+.heading {
+  font-size: 3.5rem;
+  color: var(--heading);
+  font-weight: 800;
+  text-align: center;
+}
+.heading span {
+  color: var(--heading-span);
+}
+header .logo {
+  font-size: 1.9rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--text);
+}
+header .logo i {
+  font-size: 2.2rem;
+}
+header .logo:hover {
+  color: #fc8c05;
+}
+header .navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .navbar li {
+  margin-left: 2.5rem;
+}
+header .navbar ul li a {
+  font-size: 1.57rem;
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.04rem;
+}
+header .navbar ul li a.actives,
+header .navbar ul li a:hover {
+  color: var(--heading-span);
+  border-bottom: 0.2rem solid var(--heading-span);
+  padding: 0.5rem 0;
+}
+/* navbar ends */
+
+/* hamburger icon starts*/
+#menu {
+  font-size: 3rem;
+  cursor: pointer;
+  color: var(--text);
+  display: none;
+}
+@media (max-width: 768px) {
+  #menu {
+    display: block;
+  }
+  header .navbar {
+    position: fixed;
+    top: 6.5rem;
+    right: -120%;
+    width: 75%;
+    height: 100%;
+    text-align: left;
+    align-items: flex-start;
+    background-color: var(--navbar-bg);
+    box-shadow: 0 5px 10px var(--box-shadow);
+    backdrop-filter: blur(10px);
+  }
+  header .navbar ul {
+    flex-flow: column;
+    padding: 1rem;
+  }
+  header .navbar ul li {
+    text-align: center;
+    width: 100%;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+  }
+  header .navbar ul li a {
+    display: block;
+    padding: 1rem;
+    text-align: left;
+    color: var(--text);
+    font-size: 2rem;
+  }
+  header .navbar ul li a.actives,
+  header .navbar ul li a:hover {
+    padding: 1rem;
+    color: var(--heading-span);
+    border-radius: 0.5rem;
+    border-bottom: 0.5rem solid var(--heading-span);
+  }
+  .fa-times {
+    transform: rotate(180deg);
+  }
+  header .navbar.nav-toggle {
+    right: 0;
+  }
+}
+/* hamburger icon ends */
+
+/* certificates section starts */
+.certificates {
+  /* background: #010124; */
+  background: var(--section-bg);
+  margin-top: 5rem;
+}
+.certificates h2 {
+  color: var(--heading);
+  padding: 1rem;
+}
+.certificates .heading span {
+  color: var(--heading-span);
+}
+.certificates .button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem auto;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+}
+.certificates .button-group .btn {
+  outline: none;
+  padding: 1rem 2rem;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--text);
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.certificates .button-group .btn:hover {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-color);
+  border-color: var(--btn-primary-bg);
+}
+.certificates .button-group .btn.is-checked {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-color);
+  border-color: var(--btn-primary-bg);
+}
+.certificates .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 2rem;
+}
+.certificates .box-container .box {
+  flex: 1 1 30rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem var(--box-shadow);
+  position: relative;
+  overflow: hidden;
+  height: 30rem;
+}
+.certificates .box-container .box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.certificates .box-container .box .content {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 85%;
+  left: 0;
+  background: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+}
+.certificates .box-container .box .content .tag {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 4.5rem;
+  width: 100%;
+  padding-left: 1rem;
+  background: var(--heading-span);
+}
+.certificates .box-container .box .content .tag h3 {
+  font-size: 2rem;
+  color: var(--btn-primary-color);
+}
+.certificates .box-container .box:hover .content {
+  top: 25%;
+}
+.certificates .desc {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.certificates .desc p {
+  font-size: 1.5rem;
+  color: var(--text);
+}
+.certificates .desc .btns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 2rem;
+}
+.certificates .desc .btns .btn {
+  line-height: 0;
+  display: inline;
+  padding: 1.5rem 2.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--btn-primary-color);
+  background: var(--btn-primary-bg);
+  margin-right: 2rem;
+  text-decoration: none;
+}
+.certificates .desc .btns .btn:hover {
+  background: var(--btn-primary-hover);
+}
+
+@media screen and (max-width: 450px) {
+  .certificates .button-group {
+    width: 100%;
+  }
+  .certificates .box-container {
+    margin: 0;
+  }
+  .certificates .box-container .grid-item .box {
+    width: 95% !important;
+  }
+}
+
+/* back to home button */
+.backbtn {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+}
+.backbtn .btn {
+  position: relative;
+  line-height: 0;
+  padding: 1.6rem 3rem;
+  border-radius: 0.5em;
+  transition: 0.5s;
+  color: var(--btn-primary-color);
+  background: var(--btn-primary-bg);
+  box-shadow: 0px 5px 10px var(--btn-primary-shadow);
+  text-align: center;
+}
+.backbtn .btn span {
+  font-weight: 600;
+  font-size: 1.7rem;
+  font-family: "Nunito", sans-serif;
+}
+.backbtn .btn i {
+  margin-right: 0.3rem;
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+.backbtn .btn:hover {
+  background: var(--btn-primary-hover);
+}
+.backbtn .btn:hover i {
+  transform: translateX(-5px);
+}
+/* certificates section ends */
+
+/* common media queries starts*/
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+  body {
+    padding-right: 0;
+  }
+  section {
+    padding: 2rem;
+  }
+}
+/* common media queries ends*/
+
+/* scroll top starts */
+#scroll-top {
+  position: fixed;
+  top: -140%;
+  right: 2rem;
+  padding: 1rem 1.5rem;
+  font-size: 2rem;
+  background: #ffae00;
+  color: rgb(13, 0, 44);
+  border-radius: 5rem;
+  transition: 1s linear;
+  z-index: 1000;
+}
+#scroll-top.actives {
+  top: calc(100% - 12rem);
+}
+/* scroll top ends */
+
+/* theme toggle button styles */
+.theme-toggle {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1.8rem;
+  margin-left: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  position: relative;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle i {
+  transition: 0.3s;
+  color: var(--text);
+}
+
+.light-theme .theme-toggle i.fa-sun {
+  color: #ff9800;
+}
+
+.theme-toggle i.fa-moon {
+  color: #a359ff;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle:hover i {
+  transform: rotate(15deg);
+  color: var(--heading-span);
+}

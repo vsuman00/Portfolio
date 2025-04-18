@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Heart Disease Prediction",
+    "desc": "This is Machine learning project, which predict the Human Heart Disease.",
+    "image": "heart-disease",
+    "links": {
+      "view": "https://github.com/vsuman00/Heart_Disease_Prediction/blob/main/Heart_Disease_Prediction.ipynb",
+      "code": "https://github.com/vsuman00/Heart_Disease_Prediction"
+    }
+  },
+  {
+    "name": "Merchase | Shopping Site ",
+    "desc": "This is Online Shopping site (Merchase) of clothes for both Male as well as female.",
+    "image": "oss",
+    "links": {
+      "view": "https://vsuman00.github.io/shopping-Site/index.html",
+      "code": "https://github.com/vsuman00/shopping-Site"
+    }
+  },
+  {
+    "name": "Diabetes Prediction Visualizer",
+    "desc": "This is Machine learning project, which predict the Human Heart Disease.",
+    "image": "diabetes",
+    "links": {
+      "view": "https://github.com/vsuman00/diabetes-prediction-visualizer/blob/main/Diabetes_Prediction_Project.ipynb",
+      "code": "https://github.com/vsuman00/diabetes-prediction-visualizer"
+    }
+  },
+  {
+    "name": "Calculator",
+    "desc": "This a full flex web app of a calculator using HTML, CSS and JavaScript.",
+    "image": "Calci",
+    "links": {
+      "view": "https://vsuman00.github.io/calculator.github.io/",
+      "code": "https://github.com/vsuman00/calculator.github.io"
+    }
+  },
+  {
+    "name": "To-Do List",
+    "desc": "This is a simple to-do list using HTML, CSS, JavaScript.",
+    "image": "todoList",
+    "links": {
+      "view": "https://vsuman00.github.io/to-do_list.github.io/",
+      "code": "https://github.com/vsuman00/to-do_list.github.io"
+    }
+  },
+  {
+    "name": "Flipkart MERN",
+    "desc": "Full-Stack Flipkart with Admin Dashboard and Paytm Payment Gateway. MERN Stack WebApp, ready to use for business.",
+    "image": "flipkartmern",
+    "links": {
+      "view": "https://flipkartwebs.herokuapp.com/",
+      "code": "https://github.com/vsuman00/flipkart-clone"
+    }
+  }
+]

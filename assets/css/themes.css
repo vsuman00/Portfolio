@@ -1,0 +1,180 @@
+:root {
+  /* Default theme is dark */
+  /* Common variables */
+  --transition-speed: 0.3s;
+
+  /* Light theme variables */
+  --light-background: #f7f7f7;
+  --light-text: #0e2431;
+  --light-heading: rgb(32, 32, 32);
+  --light-heading-span: rgb(115, 3, 167);
+  --light-navbar-bg: #fff;
+  --light-navbar-shadow: rgba(146, 161, 176, 0.3);
+  --light-section-bg: #f7f7f7;
+  --light-work-bg: linear-gradient(to bottom, #010136, #00003a);
+  --light-work-heading: #fff;
+  --light-work-span: rgb(255, 230, 0);
+  --light-footer-bg: #282a36;
+  --light-footer-text: #fff;
+  --light-scrollbar-track: rgb(235, 202, 245);
+  --light-scrollbar-thumb: #420177;
+  --light-card-bg: #fff;
+  --light-card-border: rgba(0, 0, 0, 0.1);
+  --light-box-shadow: rgba(0, 0, 0, 0.1);
+  --light-btn-primary-bg: #2506ad;
+  --light-btn-primary-color: #fff;
+  --light-btn-primary-shadow: rgba(48, 68, 247, 0.6);
+  --light-btn-primary-hover: #1a047e;
+  --light-btn-secondary-bg: #ffae00;
+  --light-social-hover: #ffae00;
+  --light-timeline-bg: #fff;
+
+  /* Dark theme variables */
+  --dark-background: #121212;
+  --dark-text: #e6e6e6;
+  --dark-heading: #f0f0f0;
+  --dark-heading-span: #a359ff;
+  --dark-navbar-bg: #1e1e1e;
+  --dark-navbar-shadow: rgba(0, 0, 0, 0.5);
+  --dark-section-bg: #1a1a1a;
+  --dark-work-bg: linear-gradient(to bottom, #1a1a2e, #16213e);
+  --dark-work-heading: #f0f0f0;
+  --dark-work-span: #ffdd00;
+  --dark-footer-bg: #1e1e1e;
+  --dark-footer-text: #e6e6e6;
+  --dark-scrollbar-track: #2d2d2d;
+  --dark-scrollbar-thumb: #6e40c9;
+  --dark-card-bg: #2d2d2d;
+  --dark-card-border: rgba(255, 255, 255, 0.1);
+  --dark-box-shadow: rgba(0, 0, 0, 0.5);
+  --dark-btn-primary-bg: #4527a0;
+  --dark-btn-primary-color: #fff;
+  --dark-btn-primary-shadow: rgba(94, 114, 228, 0.6);
+  --dark-btn-primary-hover: #381e84;
+  --dark-btn-secondary-bg: #ff9800;
+  --dark-social-hover: #ff9800;
+  --dark-timeline-bg: #2d2d2d;
+
+  /* Set default (dark) theme */
+  --background: var(--dark-background);
+  --text: var(--dark-text);
+  --heading: var(--dark-heading);
+  --heading-span: var(--dark-heading-span);
+  --navbar-bg: var(--dark-navbar-bg);
+  --navbar-shadow: var(--dark-navbar-shadow);
+  --section-bg: var(--dark-section-bg);
+  --work-bg: var(--dark-work-bg);
+  --work-heading: var(--dark-work-heading);
+  --work-span: var(--dark-work-span);
+  --footer-bg: var(--dark-footer-bg);
+  --footer-text: var(--dark-footer-text);
+  --scrollbar-track: var(--dark-scrollbar-track);
+  --scrollbar-thumb: var(--dark-scrollbar-thumb);
+  --card-bg: var(--dark-card-bg);
+  --card-border: var(--dark-card-border);
+  --box-shadow: var(--dark-box-shadow);
+  --btn-primary-bg: var(--dark-btn-primary-bg);
+  --btn-primary-color: var(--dark-btn-primary-color);
+  --btn-primary-shadow: var(--dark-btn-primary-shadow);
+  --btn-primary-hover: var(--dark-btn-primary-hover);
+  --btn-secondary-bg: var(--dark-btn-secondary-bg);
+  --social-hover: var(--dark-social-hover);
+  --timeline-bg: var(--dark-timeline-bg);
+}
+
+/* Light theme class that will be toggled with JavaScript */
+.light-theme {
+  --background: var(--light-background);
+  --text: var(--light-text);
+  --heading: var(--light-heading);
+  --heading-span: var(--light-heading-span);
+  --navbar-bg: var(--light-navbar-bg);
+  --navbar-shadow: var(--light-navbar-shadow);
+  --section-bg: var(--light-section-bg);
+  --work-bg: var(--light-work-bg);
+  --work-heading: var(--light-work-heading);
+  --work-span: var(--light-work-span);
+  --footer-bg: var(--light-footer-bg);
+  --footer-text: var(--light-footer-text);
+  --scrollbar-track: var(--light-scrollbar-track);
+  --scrollbar-thumb: var(--light-scrollbar-thumb);
+  --card-bg: var(--light-card-bg);
+  --card-border: var(--light-card-border);
+  --box-shadow: var(--light-box-shadow);
+  --btn-primary-bg: var(--light-btn-primary-bg);
+  --btn-primary-color: var(--light-btn-primary-color);
+  --btn-primary-shadow: var(--light-btn-primary-shadow);
+  --btn-primary-hover: var(--light-btn-primary-hover);
+  --btn-secondary-bg: var(--light-btn-secondary-bg);
+  --social-hover: var(--light-social-hover);
+  --timeline-bg: var(--light-timeline-bg);
+}
+
+/* Theme toggle button styles */
+.theme-toggle {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1.8rem;
+  margin-left: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-speed);
+  position: relative;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle i {
+  transition: var(--transition-speed);
+  color: var(--text);
+}
+
+.light-theme .theme-toggle i.fa-sun {
+  color: #ff9800;
+}
+
+.theme-toggle i.fa-moon {
+  color: #a359ff;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle:hover i {
+  transform: rotate(15deg);
+  color: var(--heading-span);
+}
+
+/* Animation for theme transition */
+body {
+  transition: background-color var(--transition-speed),
+    color var(--transition-speed);
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .theme-toggle {
+    margin-left: 0;
+    font-size: 2.2rem;
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+  }
+
+  .theme-toggle i {
+    color: #fff;
+  }
+
+  .theme-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}

@@ -1,0 +1,114 @@
+[
+  {
+    "name": "IBM Full Stack Software Developer",
+    "image": "ibm.png",
+    "Link": {
+      "view": "https://www.coursera.org/account/accomplishments/professional-cert/KXW2TEDQ5W8C"
+    }
+  },
+  {
+    "name": "Cisco AICTE Virtual Internship",
+    "image": "cicso.png",
+    "Link": {
+      "view": "https://drive.google.com/file/d/1EfKGC6QMrN8o3aMcgVhwD0EHt5PCJXLH/view?usp=sharing"
+    }
+  },
+  {
+    "name": "AWS Cloud Practitioner Essentials",
+    "image": "AWS.png",
+    "Link": {
+      "view": "https://drive.google.com/file/d/1EfKGC6QMrN8o3aMcgVhwD0EHt5PCJXLH/view?usp=sharing"
+    }
+  },
+  {
+    "name": "Microsoft Virtual Internship",
+    "image": "Microsoft.png",
+    "Link": {
+      "view": "https://drive.google.com/file/d/1m10jHWCBuiakxxRalVNyY_mH7j6htKCV/view?usp=sharing"
+    }
+  },
+  {
+    "name": "Flipkart GRID 4.0 Level-1",
+    "image": "flipkart.jpg",
+    "Link": {
+      "view": "https://drive.google.com/file/d/1PeoOlFduB150krQdE9g62cEwKl6yN7py/view?usp=sharing"
+    }
+  },
+  {
+    "name": "Web Development Internship",
+    "image": "LGM.png",
+    "Link": {
+      "view": "https://drive.google.com/file/d/1O70KxPa8a5w7eTbph6E9jkU6RG2P6stk/view?usp=sharing"
+    }
+  },
+  {
+    "name": "Java Programming",
+    "image": "GL java.png",
+    "Link": {
+      "view": "https://drive.google.com/file/d/1Ndkag119r2It8yicyLy_z26jU-NC5LjJ/view?usp=sharing"
+    }
+  },
+  {
+    "name": "Java Programming",
+    "image": "CN java.png",
+    "Link": {
+      "view": "https://drive.google.com/file/d/1G062gZm3uT5NK6bdPKY1XaNslzA4nKAF/view?usp=sharing"
+    }
+  },
+  {
+    "name": "Foundation to AI Data Science & Data Analysis",
+    "image": "samatrix1.png",
+    "Link": {
+      "view": "https://drive.google.com/file/d/11l_953Sf9h3UwSijWN26HldsAExUEqie/view?usp=sharing"
+    }
+  },
+  {
+    "name": "Data Analysis using Python",
+    "image": "samatrix2.png",
+    "Link": {
+      "view": "https://drive.google.com/file/d/1Vn_IxcCzNvgxkxC9JQsFyxtrQlrA4RIS/view?usp=sharing"
+    }
+  },
+  {
+    "name": "Machine Learning & Pattern Recognition",
+    "image": "samatrix3.png",
+    "Link": {
+      "view": "https://drive.google.com/file/d/1RekCwVGz2y_PDHtB1Ha-5XFCJaVdoND4/view?usp=sharing"
+    }
+  },
+  {
+    "name": "R Programming for Data Science",
+    "image": "samatrix4.png",
+    "Link": {
+      "view": "https://drive.google.com/file/d/1LTI0Rut2TaqVagmiFOZJIK_hWmJgot-e/view?usp=sharing"
+    }
+  },
+  {
+    "name": "Application Development using Microservices and Serverless",
+    "image": "IBM2.png",
+    "Link": {
+      "view": "https://coursera.org/share/3ffa2bbb0db52e834fbe16ce57d0f87f"
+    }
+  },
+  {
+    "name": "Cisco: Cybersecurity Essentials",
+    "image": "cyberEsstional.png",
+    "Link": {
+      "view": "https://drive.google.com/file/d/1PGImkNhdtdzWQjSFNjelRWZsxxsFqp7G/view?usp=sharing"
+    }
+  },
+  {
+    "name": "Cisco:Introduction to Network",
+    "image": "network.png",
+    "Link": {
+      "view": "https://drive.google.com/file/d/1q2a4dtuB6ZlQ7nC0In5krLWxdHg5zdWj/view?usp=sharing"
+    }
+  },
+  {
+    "name": "Cisco:Introduction to Cybersecurity",
+    "image": "ciber.png",
+    "Link": {
+      "view": "https://drive.google.com/file/d/1P5ilfW_JQWo0vZGecuWStat2RYoKfiwp/view?usp=sharing"
+    }
+  }
+]
