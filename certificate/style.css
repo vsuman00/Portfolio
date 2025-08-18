@@ -350,7 +350,7 @@ header .navbar ul li a:hover {
   transition: 1s linear;
   z-index: 1000;
 }
-#scroll-top.actives {
+#scroll-top.active {
   top: calc(100% - 12rem);
 }
 /* scroll top ends */

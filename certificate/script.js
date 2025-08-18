@@ -9,9 +9,9 @@ $(document).ready(function () {
     $(".navbar").removeClass("nav-toggle");
 
     if (window.scrollY > 60) {
-      document.querySelector("#scroll-top").classList.add("actives");
+      document.querySelector("#scroll-top").classList.add("active");
     } else {
-      document.querySelector("#scroll-top").classList.remove("actives");
+      document.querySelector("#scroll-top").classList.remove("active");
     }
   });
 
@@ -32,9 +32,28 @@ document.addEventListener("visibilitychange", function () {
 // fetch certificate start
 function getCertificate() {
   return fetch("certificate.json")
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
     .then((data) => {
       return data;
+    })
+    .catch((error) => {
+      console.error("Error fetching certificates:", error);
+      // Return fallback data
+      return [
+        {
+          name: "Sample Certificate",
+          desc: "Certificate information will be loaded soon",
+          image: "placeholder",
+          links: {
+            view: "#",
+          },
+        },
+      ];
     });
 }
 
@@ -45,9 +64,12 @@ function showCertificate(certificate) {
   let certificateHTML = "";
   certificate.forEach((certificate) => {
     certificateHTML += `
-        <div class="grid-item ${certificate.category}">
+        <div class="grid-item ${certificate.category || ""}">
         <div class="box tilt" style="width: 380px; margin: 1rem">
-          <img draggable="false" src="/assets/images/certificate/${certificate.image}.png" alt="certificate" />
+          <img draggable="false" src="/assets/images/certificate/${
+            certificate.image
+          }.png" alt="${certificate.name}" 
+               onerror="this.src='/assets/images/placeholder.png'; this.onerror=null;" />
         <div class="content">
           <div class="tag">
             <h3>${certificate.name}</h3>
@@ -55,7 +77,9 @@ function showCertificate(certificate) {
           <div class="desc">
             <p>${certificate.desc}</p>
           <div class="btns">
-            <a href="${certificate.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i>View</a>
+            <a href="${
+              certificate.links.view
+            }" class="btn" target="_blank"><i class="fas fa-eye"></i>View</a>
           
           </div>
         </div>
@@ -99,9 +123,23 @@ function showCertificate(certificate) {
   });
 }
 
-getCertificate().then((data) => {
-  showCertificate(data);
-});
+getCertificate()
+  .then((data) => {
+    showCertificate(data);
+  })
+  .catch((error) => {
+    console.error("Error loading certificates:", error);
+    // Show error message to user
+    let certificateContainer = document.querySelector(
+      ".certificates .box-container"
+    );
+    certificateContainer.innerHTML = `
+    <div style="text-align: center; padding: 2rem; color: var(--text);">
+      <h3>Unable to load certificates</h3>
+      <p>Please try refreshing the page or check back later.</p>
+    </div>
+  `;
+  });
 // fetch certificate end
 
 // Start of Tawk.to Live Chat

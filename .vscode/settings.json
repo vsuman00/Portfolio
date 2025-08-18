@@ -3,11 +3,15 @@
     "AICTE",
     "backbtn",
     "basicweb",
+    "CCNA",
+    "cpath",
+    "csvg",
     "favhand",
     "flexbox",
     "IIIT",
     "INFOBYTE",
     "lifecodes",
+    "LNCT",
     "MAMP",
     "mern",
     "morebtn",
@@ -26,5 +30,6 @@
     "viewall",
     "WAMP"
   ],
-  "cSpell.ignoreWords": ["CBSE", "Ishan"]
+  "cSpell.ignoreWords": ["CBSE", "Ishan"],
+  "kiroAgent.configureMCP": "Disabled"
 }

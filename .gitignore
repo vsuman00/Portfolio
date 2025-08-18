@@ -9,6 +9,7 @@ yarn-error.log
 package-lock.json
 
 # Editor directories and files
+.kiro/
 .vscode/
 .idea/
 *.sublime-project

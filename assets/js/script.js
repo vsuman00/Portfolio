@@ -150,24 +150,24 @@ function showSkills(skills) {
 }
 
 function showProjects(projects) {
-  let projectsContainer = document.querySelector("#work .box-container");
+  let projectsContainer = document.querySelector("#work .template-container");
   let projectHTML = "";
   projects
     .slice(0, 10)
     .filter((project) => project.category != "android")
     .forEach((project) => {
       projectHTML += `
-        <div class="box tilt">
-      <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="project" />
-      <div class="content">
-        <div class="tag">
+        <div class="template-card project-card tilt">
+      <img class="template-card-image" draggable="false" src="/assets/images/projects/${project.image}.png" alt="project" />
+      <div class="template-card-content">
+        <div class="template-card-tag">
         <h3>${project.name}</h3>
         </div>
-        <div class="desc">
+        <div class="template-card-desc">
           <p>${project.desc}</p>
-          <div class="btns">
-            <a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="${project.links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+          <div class="template-card-actions">
+            <a href="${project.links.view}" class="template-btn" target="_blank"><i class="fas fa-eye"></i> View</a>
+            <a href="${project.links.code}" class="template-btn" target="_blank">Code <i class="fas fa-code"></i></a>
           </div>
         </div>
       </div>
@@ -190,7 +190,7 @@ function showProjects(projects) {
   });
 
   /* SCROLL PROJECTS */
-  srtop.reveal(".work .box", { interval: 200 });
+  srtop.reveal(".work .template-card", { interval: 200 });
 }
 
 fetchData().then((data) => {
@@ -237,7 +237,7 @@ document.onkeydown = function (e) {
 };
 
 // Start of Tawk.to Live Chat
-let Tawk_API = Tawk_API || {},
+var Tawk_API = Tawk_API || {},
   Tawk_LoadStart = new Date();
 (function () {
   let s1 = document.createElement("script"),
@@ -273,7 +273,6 @@ srtop.reveal(".home .dev", { interval: 600 });
 srtop.reveal(".about .content h3", { delay: 200 });
 srtop.reveal(".about .content .tag", { delay: 200 });
 srtop.reveal(".about .content p", { delay: 200 });
-srtop.reveal(".about .content .box-container", { delay: 200 });
 srtop.reveal(".about .content .resumebtn", { delay: 200 });
 
 /* SCROLL SKILLS */
@@ -281,14 +280,36 @@ srtop.reveal(".skills .container", { interval: 200 });
 srtop.reveal(".skills .container .bar", { delay: 400 });
 
 /* SCROLL EDUCATION */
-srtop.reveal(".education .box", { interval: 200 });
+srtop.reveal(".education .template-card", { interval: 200 });
 
 /* SCROLL PROJECTS */
 srtop.reveal(".work .box", { interval: 200 });
 
 /* SCROLL EXPERIENCE */
-srtop.reveal(".experience .timeline", { delay: 400 });
-srtop.reveal(".experience .timeline .container", { interval: 400 });
+srtop.reveal(".experience .timeline", { 
+  delay: 200,
+  duration: 1000,
+  origin: 'top',
+  distance: '50px',
+  easing: 'ease-out'
+});
+srtop.reveal(".experience .timeline .container", { 
+  interval: 300,
+  duration: 800,
+  origin: 'bottom',
+  distance: '30px',
+  easing: 'ease-out',
+  scale: 0.9
+});
+srtop.reveal(".experience .theme-card", {
+  interval: 200,
+  duration: 600,
+  origin: 'left',
+  distance: '40px',
+  easing: 'ease-out',
+  scale: 0.95,
+  opacity: 0
+});
 
 /* SCROLL CONTACT */
 srtop.reveal(".contact .container", { delay: 400 });

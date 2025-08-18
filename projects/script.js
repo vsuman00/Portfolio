@@ -14,6 +14,9 @@ $(document).ready(function () {
       document.querySelector("#scroll-top").classList.remove("active");
     }
   });
+
+  // Initialize theme
+  initTheme();
 });
 
 document.addEventListener("visibilitychange", function () {
@@ -29,9 +32,29 @@ document.addEventListener("visibilitychange", function () {
 // fetch projects start
 function getProjects() {
   return fetch("projects.json")
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
     .then((data) => {
       return data;
+    })
+    .catch((error) => {
+      console.error("Error fetching projects:", error);
+      // Return fallback data
+      return [
+        {
+          name: "Portfolio Website",
+          desc: "Personal portfolio website showcasing projects and skills",
+          image: "portfolio",
+          links: {
+            view: "#",
+            code: "#",
+          },
+        },
+      ];
     });
 }
 
@@ -40,9 +63,12 @@ function showProjects(projects) {
   let projectsHTML = "";
   projects.forEach((project) => {
     projectsHTML += `
-        <div class="grid-item ${project.category}">
+        <div class="grid-item ${project.category || ""}">
         <div class="box tilt" style="width: 380px; margin: 1rem">
-      <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="project" />
+      <img draggable="false" src="/assets/images/projects/${
+        project.image
+      }.png" alt="${project.name}" 
+           onerror="this.src='/assets/images/placeholder.png'; this.onerror=null;" />
       <div class="content">
         <div class="tag">
         <h3>${project.name}</h3>
@@ -50,8 +76,12 @@ function showProjects(projects) {
         <div class="desc">
           <p>${project.desc}</p>
           <div class="btns">
-            <a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="${project.links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+            <a href="${
+              project.links.view
+            }" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
+            <a href="${
+              project.links.code
+            }" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
           </div>
         </div>
       </div>
@@ -95,9 +125,21 @@ function showProjects(projects) {
   });
 }
 
-getProjects().then((data) => {
-  showProjects(data);
-});
+getProjects()
+  .then((data) => {
+    showProjects(data);
+  })
+  .catch((error) => {
+    console.error("Error loading projects:", error);
+    // Show error message to user
+    let projectsContainer = document.querySelector(".work .box-container");
+    projectsContainer.innerHTML = `
+    <div style="text-align: center; padding: 2rem; color: var(--text);">
+      <h3>Unable to load projects</h3>
+      <p>Please try refreshing the page or check back later.</p>
+    </div>
+  `;
+  });
 // fetch projects end
 
 // Start of Tawk.to Live Chat
@@ -113,6 +155,38 @@ var Tawk_API = Tawk_API || {},
   s0.parentNode.insertBefore(s1, s0);
 })();
 // End of Tawk.to Live Chat
+
+// Theme toggle functionality
+function initTheme() {
+  // Check if user previously selected a theme
+  const userTheme = localStorage.getItem("theme");
+  const themeToggle = document.getElementById("theme-toggle");
+  const themeIcon = themeToggle.querySelector("i");
+
+  // Set theme based on localStorage or default to dark
+  if (userTheme === "light") {
+    document.body.classList.add("light-theme");
+    themeIcon.classList.replace("fa-sun", "fa-moon");
+  } else {
+    // Dark is the default
+    document.body.classList.remove("light-theme");
+    themeIcon.classList.replace("fa-moon", "fa-sun");
+  }
+
+  // Add event listener to toggle button
+  themeToggle.addEventListener("click", function () {
+    document.body.classList.toggle("light-theme");
+
+    // Update localStorage
+    if (document.body.classList.contains("light-theme")) {
+      localStorage.setItem("theme", "light");
+      themeIcon.classList.replace("fa-sun", "fa-moon");
+    } else {
+      localStorage.setItem("theme", "dark");
+      themeIcon.classList.replace("fa-moon", "fa-sun");
+    }
+  });
+}
 
 // disable developer mode
 document.onkeydown = function (e) {

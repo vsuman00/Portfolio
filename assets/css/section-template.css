@@ -1,0 +1,485 @@
+/* ==============================================
+   REUSABLE SECTION TEMPLATE SYSTEM
+   ============================================== */
+
+/* Base Section Template */
+.template-section {
+  min-height: 90vh;
+  padding: 2rem 9%;
+  background: var(--section-bg);
+}
+
+.template-section.alt-bg {
+  background: var(--background);
+}
+
+.template-section.dark-bg {
+  background: linear-gradient(to bottom, #000031, #00002c);
+}
+
+/* Section Heading Template */
+.template-heading {
+  font-size: 3.5rem;
+  color: var(--heading);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.template-heading span {
+  color: var(--heading-span);
+}
+
+.template-heading i {
+  margin-right: 1rem;
+}
+
+/* Quote/Description Template */
+.template-quote {
+  font-size: 2rem;
+  text-align: center;
+  font-family: "Kaushan Script", cursive;
+  font-weight: 400;
+  margin: 0.5rem 0 2rem 0;
+  color: var(--text);
+}
+
+/* Container Template */
+.template-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+.template-container.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+}
+
+.template-container.skills-grid {
+  background: var(--card-bg);
+  color: var(--text);
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 90%;
+  box-shadow: 0 5px 10px var(--box-shadow);
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+/* Card Template */
+.template-card {
+  flex: 1 1 30rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem var(--box-shadow);
+  position: relative;
+  overflow: hidden;
+  height: 30rem;
+  background: var(--card-bg);
+  transition: all 0.3s ease;
+}
+
+.template-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px var(--box-shadow);
+}
+
+/* Education Card Variant */
+.template-card.education-card {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: auto;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Skills Card Variant */
+.template-card.skill-card {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 1rem;
+  background: var(--navbar-bg);
+  height: auto;
+  flex: none;
+}
+
+.template-card.skill-card:hover {
+  box-shadow: 0 8px 10px var(--btn-primary-shadow) !important;
+  background-color: var(--card-bg) !important;
+  transform: translateY(-5px);
+}
+
+/* Experience Card Variant */
+.template-card.experience-card {
+  background-color: var(--card-bg);
+  border-radius: 6px;
+  box-shadow: 0 4px 8px var(--box-shadow);
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: cardSlideIn 0.8s ease-out forwards;
+  z-index: 8;
+  margin: 15px 0;
+  height: auto;
+}
+
+.template-card.experience-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 24px var(--box-shadow);
+  border: 1px solid var(--heading-span);
+}
+
+/* Card Image Template */
+.template-card-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.template-card.education-card .template-card-image {
+  height: 12rem;
+  width: 13rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin: 1rem;
+}
+
+/* Card Content Template */
+.template-card-content {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 85%;
+  left: 0;
+  background: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.template-card:hover .template-card-content {
+  top: 25%;
+}
+
+.template-card.education-card .template-card-content {
+  position: relative;
+  top: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.template-card.skill-card .template-card-content {
+  position: static;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  height: auto;
+}
+
+.template-card.experience-card .template-card-content {
+  position: static;
+  height: auto;
+}
+
+/* Card Tag Template */
+.template-card-tag {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 4.5rem;
+  width: 100%;
+  padding-left: 1rem;
+  background: var(--heading-span);
+}
+
+.template-card-tag h3 {
+  font-size: 2rem;
+  color: var(--btn-primary-color);
+}
+
+.template-card.education-card .template-card-tag {
+  background: transparent;
+  height: auto;
+  padding: 0;
+  justify-content: flex-start;
+}
+
+.template-card.education-card .template-card-tag h3 {
+  color: var(--heading);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.template-card.skill-card .template-card-tag {
+  background: transparent;
+  height: auto;
+  padding: 0;
+  justify-content: center;
+}
+
+.template-card.skill-card .template-card-tag span {
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+}
+
+.template-card.experience-card .template-card-tag {
+  background: transparent;
+  height: auto;
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  justify-content: flex-start;
+}
+
+.template-card.experience-card .template-card-tag h2 {
+  color: var(--heading);
+  font-size: 1.3rem;
+}
+
+/* Card Description Template */
+.template-card-desc {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.template-card-desc p {
+  font-size: 1.5rem;
+  color: var(--text);
+}
+
+.template-card.education-card .template-card-desc {
+  margin: 0;
+  padding: 0;
+}
+
+.template-card.education-card .template-card-desc p {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.template-card.education-card .template-card-desc h4 {
+  font-size: 1.2rem;
+  color: var(--heading-span);
+}
+
+.template-card.skill-card .template-card-desc {
+  margin: 0;
+  text-align: center;
+}
+
+.template-card.skill-card .template-card-desc i {
+  font-size: 4rem;
+  color: var(--heading-span);
+}
+
+.template-card.experience-card .template-card-desc {
+  margin: 0 1.5rem 1rem 1.5rem;
+}
+
+.template-card.experience-card .template-card-desc h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--heading-span);
+}
+
+.template-card.experience-card .template-card-desc p {
+  font-size: 1.2rem;
+}
+
+/* Card Actions Template */
+.template-card-actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.template-card-actions .template-btn {
+  line-height: 0;
+  display: inline;
+  padding: 1.5rem 2.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--btn-primary-color);
+  background: var(--btn-primary-bg);
+  margin-right: 2rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.template-card-actions .template-btn:hover {
+  background: var(--btn-primary-hover);
+  transform: translateY(-2px);
+}
+
+/* View All Button Template */
+.template-viewall {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.template-viewall .template-btn {
+  position: relative;
+  line-height: 0;
+  padding: 1.6rem 3rem;
+  border-radius: 0.5em;
+  transition: 0.5s;
+  color: var(--btn-primary-color);
+  background: var(--btn-primary-bg);
+  box-shadow: 0px 5px 10px var(--btn-primary-shadow);
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  border: 2px solid transparent;
+}
+
+.template-viewall .template-btn span {
+  font-weight: 600;
+  font-size: 1.7rem;
+  font-family: "Nunito", sans-serif;
+}
+
+.template-viewall .template-btn i {
+  margin-left: 0.3rem;
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+
+.template-viewall .template-btn:hover {
+  background: var(--btn-primary-hover);
+  transform: translateY(-2px);
+}
+
+.template-viewall .template-btn:hover i {
+  transform: translateX(5px);
+}
+
+/* Dark theme variant for certificates */
+.template-section.dark-bg .template-heading {
+  color: #fff;
+}
+
+.template-section.dark-bg .template-heading span {
+  color: rgb(255, 230, 0);
+}
+
+.template-section.dark-bg .template-viewall .template-btn {
+  color: rgb(255, 255, 255);
+  background: transparent;
+  border: 2px solid #fff;
+  box-shadow: 0px 5px 10px rgba(65, 84, 241, 0.4);
+}
+
+.template-section.dark-bg .template-viewall .template-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Animations */
+@keyframes cardSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes timelineGrow {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes circleAppear {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .template-section {
+    padding: 2rem 5%;
+  }
+  
+  .template-heading {
+    font-size: 2.8rem;
+  }
+  
+  .template-quote {
+    font-size: 1.6rem;
+  }
+  
+  .template-container {
+    gap: 1rem;
+    margin: 1rem auto;
+  }
+  
+  .template-container.skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
+    width: 100%;
+  }
+  
+  .template-card {
+    flex: 1 1 100%;
+  }
+  
+  .template-card.education-card {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .template-card.education-card .template-card-image {
+    width: 100%;
+    height: 20rem;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .template-heading {
+    font-size: 2.4rem;
+  }
+  
+  .template-quote {
+    font-size: 1.4rem;
+  }
+  
+  .template-card-tag h3 {
+    font-size: 1.6rem;
+  }
+  
+  .template-card-desc p {
+    font-size: 1.3rem;
+  }
+  
+  .template-card-actions .template-btn {
+    padding: 1.2rem 2rem;
+    font-size: 1.3rem;
+  }
+}
